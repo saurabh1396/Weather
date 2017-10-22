@@ -25,8 +25,8 @@ public class MainActivity extends AppCompatActivity {
         updatedField = (TextView)findViewById(R.id.updated_field);
         detailsField = (TextView)findViewById(R.id.details_field);
         currentTemperatureField = (TextView)findViewById(R.id.current_temperature_field);
-        humidity_field = (TextView)findViewById(R.id.humidity_field);
-        pressure_field = (TextView)findViewById(R.id.pressure_field);
+        humidity_field = (TextView)findViewById(R.id.humidity);
+        pressure_field = (TextView)findViewById(R.id.pressure);
         weatherIcon = (TextView)findViewById(R.id.weather_icon);
         weatherIcon.setTypeface(weatherFont);
 
