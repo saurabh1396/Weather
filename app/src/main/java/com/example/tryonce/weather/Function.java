@@ -1,8 +1,6 @@
 package com.example.tryonce.weather;
 
-/**
- * Created by Saurabh on 6/28/2017.
- */
+
 
 import android.os.AsyncTask;
 import android.util.Log;
@@ -18,10 +16,9 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 public class Function {
-    private static final String OPEN_WEATHER_MAP_URL =
-            "http://api.openweathermap.org/data/2.5/weather?lat=%s&lon=%s&units=metric";
+    private static final String OPEN_WEATHER_MAP_URL = "http://api.openweathermap.org/data/2.5/weather?lat=%s&lon=%s&units=metric", OPEN_WEATHER_MAP_API = "64d85c31a812cbe3412cc567056dc6f1";
 
-    private static final String OPEN_WEATHER_MAP_API = "64d85c31a812cbe3412cc567056dc6f1";
+
 
     public static String setWeatherIcon(int actualId, long sunrise, long sunset){
         int id = actualId / 100;
