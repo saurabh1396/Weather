@@ -61,7 +61,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         />
     <TextView
-        android:id="@+id/humidity_field"
+        android:id="@+id/humidity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/details_field"
@@ -70,10 +70,10 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         />
     <TextView
-        android:id="@+id/pressure_field"
+        android:id="@+id/pressure"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/humidity_field"
+        android:layout_below="@+id/humidity"
         android:layout_centerHorizontal="true"
         android:textColor="#FFFFFF"
         android:textAppearance="?android:attr/textAppearanceMedium"
