@@ -17,6 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+        android:text="CITY NAME"
         android:textColor="#FFFFFF"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -26,6 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/city_field"
         android:layout_centerHorizontal="true"
+        android:text="MMM DD, YYYY HH:MM:SS a"
         android:textColor="#FFFFFF"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textSize="13sp" />
@@ -36,6 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
+        android:text="ICON"
         android:textColor="#FFFFFF"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="90sp"
@@ -47,6 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:text="@string/label_temperature"
         android:textColor="#FFFFFF"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="50sp" />
@@ -57,6 +61,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/weather_icon"
         android:layout_centerHorizontal="true"
+        android:text="DESCRIPTION"
         android:textColor="#FFFFFF"
         android:textAppearance="?android:attr/textAppearanceMedium"
         />
@@ -66,6 +71,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/details_field"
         android:layout_centerHorizontal="true"
+        android:text="@string/label_humidity"
         android:textColor="#FFFFFF"
         android:textAppearance="?android:attr/textAppearanceMedium"
         />
@@ -75,6 +81,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/humidity"
         android:layout_centerHorizontal="true"
+        android:text="@string/label_pressure"
         android:textColor="#FFFFFF"
         android:textAppearance="?android:attr/textAppearanceMedium"
         />
