@@ -8,7 +8,8 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView cityField, detailsField, currentTemperatureField, humidity_field, pressure_field, weatherIcon, updatedField;
+    TextView cityField;
+    TextView detailsField, currentTemperatureField, humidity_field, pressure_field, weatherIcon, updatedField;
 
     Typeface weatherFont;
 
