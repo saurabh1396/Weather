@@ -17,11 +17,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
 
 
-        weatherFont = Typeface.createFromAsset(getAssets(), "fonts/weathericons-regular-webfont.ttf");
+      //  weatherFont = Typeface.createFromAsset(getAssets(), "fonts/weathericons-regular-webfont.ttf");
 
         cityField = (TextView)findViewById(R.id.city_field);
         updatedField = (TextView)findViewById(R.id.updated_field);
@@ -40,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
                 updatedField.setText(weather_updatedOn);
                 detailsField.setText(weather_description);
                 currentTemperatureField.setText(weather_temperature);
-                humidity_field.setText("Humidity: "+weather_humidity);
-                pressure_field.setText("Pressure: "+weather_pressure);
+                humidity_field.setText(weather_humidity);
+                pressure_field.setText(weather_pressure);
                 weatherIcon.setText(Html.fromHtml(weather_iconText));
 
             }
