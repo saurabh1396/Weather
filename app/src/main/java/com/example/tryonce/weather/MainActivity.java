@@ -1,5 +1,6 @@
 package com.example.tryonce.weather;
 
+import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.graphics.Typeface;
@@ -10,7 +11,7 @@ public class MainActivity extends AppCompatActivity {
 
     TextView cityField;
     TextView detailsField, currentTemperatureField;
-    TextView humidity_field, pressure_field, weatherIcon, updatedField;
+    TextView humidityField, pressureField, weatherIcon, updatedField;
 
     Typeface weatherFont;
 
@@ -26,8 +27,8 @@ public class MainActivity extends AppCompatActivity {
         updatedField = (TextView)findViewById(R.id.updated_field);
         detailsField = (TextView)findViewById(R.id.details_field);
         currentTemperatureField = (TextView)findViewById(R.id.current_temperature_field);
-        humidity_field = (TextView)findViewById(R.id.humidity);
-        pressure_field = (TextView)findViewById(R.id.pressure);
+        humidityField = (TextView)findViewById(R.id.humidity);
+        pressureField = (TextView)findViewById(R.id.pressure);
         weatherIcon = (TextView)findViewById(R.id.weather_icon);
         weatherIcon.setTypeface(weatherFont);
 
@@ -35,9 +36,15 @@ public class MainActivity extends AppCompatActivity {
         Function.placeIdTask asyncTask =new Function.placeIdTask(new Function.AsyncResponse() {
             public void processFinish(String weather_city, String weather_description, String weather_temperature, String weather_humidity, String weather_pressure, String weather_updatedOn, String weather_iconText, String sun_rise) {
 
+                Resources res = getResources();
                 cityField.setText(weather_city);
                 updatedField.setText(weather_updatedOn);
                 detailsField.setText(weather_description);
+
+                currentTemperatureField.setText(res.getString(R.string.label_temperature, weather_temperature));
+                humidityField.setText(res.getString(R.string.label_humidity, weather_humidity));
+                pressureField.setText(res.getString(R.string.label_pressure, weather_pressure));
+
                 currentTemperatureField.setText(weather_temperature);
                 humidity_field.setText(weather_humidity);
                 pressure_field.setText(weather_pressure);
