@@ -17,11 +17,6 @@ import java.util.Date;
 import java.util.Locale;
 public class Function {
     private static final String OPEN_WEATHER_MAP_URL = "http://api.openweathermap.org/data/2.5/weather?lat=%s&lon=%s&units=metric", OPEN_WEATHER_MAP_API = "64d85c31a812cbe3412cc567056dc6f1";
-
-
-    
-
-
     public interface AsyncResponse {
 
         void processFinish(String output1, String output2, String output3, String output4, String output5, String output6, String output7, String output8);
@@ -33,14 +28,14 @@ public class Function {
 
     public static class placeIdTask extends AsyncTask<String, Void, JSONObject> {
 
-        public AsyncResponse delegate = null;//Call back interface
+        public AsyncResponse delegate = null;
 
         public placeIdTask(AsyncResponse asyncResponse) {
-            delegate = asyncResponse;//Assigning call back interfacethrough constructor
+            delegate = asyncResponse;
         }
 
         @Override
-        protected JSONObject doInBackground(String... params) {
+        protected JSONObject doInBackground(String... params) {// this function executes in the background
 
             JSONObject jsonWeather = null;
             try {
@@ -50,10 +45,10 @@ public class Function {
             }
 
 
-            return jsonWeather;
+            return jsonWeather; // returning the value
         }
 
-        public static String setWeatherIcon(int actualId, long sunrise, long sunset){
+        public static String setWeatherIcon(int actualId, long sunrise, long sunset){ // function used for setting the weather icon
             int id = actualId / 100;
             String icon = "";
             if(actualId == 800){
@@ -84,7 +79,7 @@ public class Function {
 
 
         @Override
-        protected void onPostExecute(JSONObject json) {
+        protected void onPostExecute(JSONObject json) { // executed after the data is loaded
             try {
                 if(json != null){
                     JSONObject details = json.getJSONArray("weather").getJSONObject(0);
@@ -105,7 +100,7 @@ public class Function {
 
                 }
             } catch (JSONException e) {
-                //Log.e(LOG_TAG, "Cannot process JSON results", e);
+
             }
 
 
@@ -113,14 +108,9 @@ public class Function {
         }
     }
 
-
-
-
-
-
-    public static JSONObject getWeatherJSON(String lat, String lon){
+    public static JSONObject getWeatherJSON(String latitude, String longitude){ // function to load JSON data
         try {
-            URL url = new URL(String.format(OPEN_WEATHER_MAP_URL, lat, lon));
+            URL url = new URL(String.format(OPEN_WEATHER_MAP_URL, latitude, longitude));// using the url for getting the data
             HttpURLConnection connection =
                     (HttpURLConnection)url.openConnection();
 
@@ -129,7 +119,7 @@ public class Function {
             BufferedReader reader = new BufferedReader(
                     new InputStreamReader(connection.getInputStream()));
 
-            StringBuffer json = new StringBuffer(1024);
+            StringBuffer json = new StringBuffer(1024); // changing the data type
             String tmp="";
             while((tmp=reader.readLine())!=null)
                 json.append(tmp).append("\n");
@@ -137,8 +127,7 @@ public class Function {
 
             JSONObject data = new JSONObject(json.toString());
 
-            // This value will be 404 if the request was not
-            // successful
+
             if(data.getInt("cod") != 200){
                 return null;
             }
